@@ -1,45 +1,15 @@
 /* 메인페이지 */
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px red solid;
-}
-
-.section-container {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  height: 50%;
-  border: 1px chocolate solid;
-}
-
-section {
-  border: 1px green solid;
-}
-
-.product-list {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 5px;
-}
-
-.item-container {
-  display: flex;
-  justify-content: center;
-}
-
-.item-box {
-  border: 1px solid aqua;
-  margin: 0 5px 0 5px;
-  width: 264px;
-  height: 264px;
-}
-
-.bookmark-list {
-  height: 50%;
-  width: 100%;
-  margin-top: 5px;
+  background-color: white;
+  z-index: -1;
+  width: 1128px;
+  height: 640px;
+  margin-top: 24px;
+  position: absolute;
+  top: 104px;
+  left: 76px;
+  right: 76px;
+  bottom: 88px;
 }
 
 /* 프로덕트 리스트 페이지 */

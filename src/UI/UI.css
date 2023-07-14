@@ -1,8 +1,8 @@
 /* 드롭다운 */
 
 .dropdown-list {
-  list-style: none;
   position: absolute;
+  list-style: none;
   width: 200px;
   height: 150px;
   top: 70px;
@@ -23,6 +23,7 @@
   width: 100%;
   border: 0.5px solid rgba(0, 0, 0, 0.1);
   flex-grow: 1;
+  z-index: 99;
 }
 
 .icon-img {

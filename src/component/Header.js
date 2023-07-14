@@ -1,32 +1,46 @@
 import { Link } from "react-router-dom";
 import Dropdown from "../UI/Dropdown";
-import { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const toggleBlur = () => {
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 200);
   };
 
   return (
     <>
       <header>
         <div className="logo-box">
-          <Link to="/">
-            <img src="logo.png" alt="logo" />
-          </Link>
+          <div className="logo">
+            <Link to="/">
+              <img src="logo.png" alt="" />
+            </Link>
+          </div>
           <h2>
             <Link to="/" className="shopping-mall-name">
               COZ Shopping
             </Link>
           </h2>
         </div>
-
-        <label className="icon-box" onClick={toggleDropdown}>
-          <img src="hamburger.png" alt="navimenu" />
-        </label>
-        {isOpen && <Dropdown />}
+        <div
+          onBlur={() => {
+            setIsOpen(false);
+          }}
+        >
+          <label
+            className="icon-box"
+            onMouseDown={() => {
+              setIsOpen(!isOpen);
+            }}
+          >
+            <img src="hamburger.png" alt="navimenu" />
+          </label>
+          {isOpen && <Dropdown />}
+        </div>
       </header>
     </>
   );

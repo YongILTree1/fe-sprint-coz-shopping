@@ -1,10 +1,10 @@
 /* 헤더 */
 header {
-  height: 80px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 80px;
+  width: 1280px;
   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   position: sticky;
@@ -13,11 +13,19 @@ header {
 .logo-box {
   display: flex;
   margin-left: 76px;
-}
-h2 {
-  width: 230px;
+  width: 297px;
   height: 30px;
 }
+.logo-box img {
+  width: 55px;
+  height: 30px;
+}
+
+.logo-box h2 {
+  width: 300px;
+  height: 30px;
+}
+
 .shopping-mall-name {
   margin-left: 10px;
   text-decoration: none;
@@ -25,8 +33,54 @@ h2 {
 }
 
 .icon-box {
-  margin-right: 76px;
   cursor: pointer;
+  margin-right: 76px;
+  width: 34px;
+  height: 24px;
+}
+
+.icon-box img {
+  width: 34px;
+  height: 24px;
+}
+
+/* 메인화면 상품 리스트, 북마크 리스트 */
+.section-container {
+  z-index: 90;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.product-list h2 {
+  margin-bottom: 12px;
+}
+
+.item-container {
+  display: flex;
+  justify-content: center;
+}
+
+.item-box {
+  margin: 0 5px 0 5px;
+  width: 264px;
+  height: 264px;
+}
+
+.item-box img {
+  width: 264px;
+  height: 210px;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.bookmark-list {
+  height: 50%;
+  width: 100%;
+  margin-top: 5px;
 }
 
 /* 풋터 */
@@ -34,6 +88,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  top: 768px;
+  bottom: 6px;
+
   height: 80px;
   width: 100%;
   text-align: center;
