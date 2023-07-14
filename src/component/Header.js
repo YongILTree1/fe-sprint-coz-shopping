@@ -12,15 +12,19 @@ function Header() {
   return (
     <>
       <header>
-        <div className="logo_box">
+        <div className="logo-box">
           <Link to="/">
             <img src="logo.png" alt="logo" />
           </Link>
-          <h2 className="shopping_mall_name">COZ Shopping</h2>
+          <h2>
+            <Link to="/" className="shopping-mall-name">
+              COZ Shopping
+            </Link>
+          </h2>
         </div>
 
-        <label className="icon_box" onClick={toggleDropdown}>
-          <img src="hamberger.png" alt="navimenu" />
+        <label className="icon-box" onClick={toggleDropdown}>
+          <img src="hamburger.png" alt="navimenu" />
         </label>
         {isOpen && <Dropdown />}
       </header>

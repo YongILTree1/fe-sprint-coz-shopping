@@ -1,45 +1,24 @@
+import BookmarkList from "../component/BookmarkList";
+import ProductList from "../component/ProductList";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 function Main() {
+  const [productData, setProductData] = useState([]);
+  const url = "http://cozshopping.codestates-seb.link/api/v1/products";
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setProductData(res.data);
+    });
+  }, []);
+
   return (
     <main>
-      <div className="section_container">
-        <section className="product_list">
-          <article>
-            <h3>상품리스트</h3>
-            <div className="item_container">
-              <div className="item_box">
-                <p>상품이름</p>
-              </div>
-              <div className="item_box">
-                <p>#카테고리이름</p>
-              </div>
-              <div className="item_box">
-                <p>기획전 이름</p>
-              </div>
-              <div className="item_box">
-                <p>브랜드 이름</p>
-              </div>
-            </div>
-          </article>
-        </section>
-        <section className="bookmark_list">
-          <article>
-            <h3>북마크리스트</h3>
-            <div className="item_container">
-              <div className="item_box">
-                <p>상품이름</p>
-              </div>
-              <div className="item_box">
-                <p>#카테고리이름</p>
-              </div>
-              <div className="item_box">
-                <p>기획전 이름</p>
-              </div>
-              <div className="item_box">
-                <p>브랜드 이름</p>
-              </div>
-            </div>
-          </article>
-        </section>
+      <div className="section-container">
+        {productData.map((item, idx) => {
+          return <ProductList item={item} key={idx} />;
+        })}
+        <BookmarkList />
       </div>
     </main>
   );
